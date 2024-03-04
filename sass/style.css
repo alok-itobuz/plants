@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+:root {
+  --green-color: #3E8847;
+  --dark-green-color: #4A4E1C;
+  --light-green-color: #3E8646;
+  --very-light-green-color: #92B896;
+  --black-color: #09270D;
+  --dark-grey-color: #7D807E;
+  --grey-color: #727272;
+  --light-grey-color: #C0C0C0;
+  --white-color: #fff;
+  --yellow-color: #F5C771;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  color: var(--black-color);
+  font-family: inherit;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.navbar a.navbar-brand {
+  font-family: "Playfair Display", serif;
+}
+.navbar a.navbar-brand span {
+  color: var(--green-color);
+}
+.navbar form {
+  height: 2rem;
+  max-width: 12rem;
+}
+.navbar form input {
+  border-radius: 3rem;
+  font-size: 0.7rem;
+}
+.navbar form input::-moz-placeholder {
+  color: var(--light-grey-color);
+}
+.navbar form input::placeholder {
+  color: var(--light-grey-color);
+}
+.navbar form button {
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.navbar .nav-icon-bag span {
+  height: 65%;
+  aspect-ratio: 1/1;
+  background: var(--green-color);
+  color: var(--white-color);
+  top: -20%;
+  right: -30%;
+  font-size: 0.6rem;
+}
+
+#home {
+  height: 80vh;
+}
+#home .home-carousel-container {
+  height: 60%;
+}
+#home .home-carousel-container .home-carousel-item {
+  top: 50%;
+  transition: all 0.7s ease;
+}
+#home .home-carousel-container .home-carousel-item .home-carousel-body {
+  border-radius: 1rem;
+}
+#home .home-carousel-container .home-carousel-item .home-carousel-body img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  -o-object-position: center;
+     object-position: center;
+  background: var(--grey-color);
+}
+#home .home-carousel-container .home-carousel-item .home-carousel-body span {
+  font-size: 0.6rem;
+  color: var(--dark-grey-color);
+  bottom: 0.2rem;
+  right: 0.6rem;
+}
+#home .home-texts-container {
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 40%;
+}
+#home .home-texts-container .love-nature::before {
+  display: inline-block;
+  content: "";
+  height: 0.1rem;
+  width: 2.5rem;
+  background: var(--light-grey-color);
+  margin-right: 0.5rem;
+}
+#home .home-texts-container .love-nature img {
+  height: 3rem;
+  top: -2rem;
+  left: 1.2rem;
+}
+#home .home-texts-container .home-main-heading {
+  font-size: 1.8rem;
+  max-width: 15rem;
+  color: var(--green-color);
+  font-family: "Playfair Display", serif;
+}
+#home .home-texts-container .buttons-container button {
+  font-size: 0.7rem;
+  border-radius: 5rem;
+  border: 1px solid var(--black-color);
+  background: transparent;
+}
+#home .home-texts-container .buttons-container button:hover {
+  background: var(--black-color);
+  color: var(--white-color);
+}
+#home .home-texts-container .social-navigation-container {
+  height: 1.3rem;
+}
+#home .home-texts-container .social-navigation-container .social-icons-container img {
+  max-height: 1.1rem;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container {
+  width: 50%;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container button {
+  border-radius: 50%;
+  aspect-ratio: 1/1;
+  box-shadow: 0px 3px 13px rgba(0, 0, 0, 0.12);
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container button:hover {
+  cursor: pointer;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container button span {
+  border: 5.5px solid var(--green-color);
+  border-top-color: transparent;
+  border-bottom-color: transparent;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container button.btn-carousel-left span {
+  border-left: none;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container button.btn-carousel-right span {
+  border-right: none;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container span {
+  font-size: 0.8rem;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider {
+  height: 0.1rem;
+  background: var(--very-light-green-color);
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider span {
+  flex: 1;
+  transition: al 0.2s ease;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider span:hover {
+  background: rgba(0, 0, 0, 0.1333333333);
+  cursor: pointer;
+}
+#home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider span.active {
+  background: var(--light-green-color);
+}
+
+#collection {
+  height: 70vh;
+}
+#collection h2 {
+  font-family: "Playfair Display", serif;
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item {
+  width: 100%;
+  transition: all 0.3s ease;
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container {
+  height: 90%;
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item h4 {
+  height: 10%;
+  font-family: "Playfair Display", serif;
+  font-size: 1.2rem;
+}
+#collection .collection-carousel-container .collection-carousel-buttons {
+  height: 2rem;
+}
+#collection .collection-carousel-container .collection-carousel-buttons button {
+  border: 1px solid var(--black-color);
+  aspect-ratio: 1/1 !important;
+}
+#collection .collection-carousel-container .collection-carousel-buttons button:hover {
+  color: var(--yellow-color);
+  border-color: var(--yellow-color);
+}
+
+@media (min-width: 768px) {
+  #home {
+    height: 70vh;
+  }
+  #home .home-carousel-container {
+    width: 80%;
+    left: 20% !important;
+    height: 100%;
+  }
+  #home .home-carousel-container .home-carousel-item {
+    width: 80% !important;
+    aspect-ratio: 3/2;
+  }
+  #home .home-carousel-container .home-carousel-item.active {
+    height: 70% !important;
+    z-index: 1;
+  }
+  #home .home-texts-container {
+    z-index: 5;
+    height: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #home .home-texts-container .home-main-heading {
+    max-width: 20rem;
+    letter-spacing: 1px;
+    font-size: 2.5rem;
+  }
+  #home .home-texts-container .social-navigation-container {
+    width: 70%;
+    position: absolute;
+    bottom: 0.5rem;
+  }
+  #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
+    width: 50% !important;
+  }
+  #collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container {
+    height: 90%;
+  }
+  #collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container img {
+    height: 100%;
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #collection .collection-carousel-container .collection-carousel .collection-carousel-item h4 {
+    height: 10%;
+  }
+  #collection .collection-carousel-container .collection-carousel-buttons {
+    width: 2rem;
+    height: 100%;
+  }
+  #collection .collection-carousel-container .collection-carousel-buttons button {
+    width: 2rem !important;
+    height: 2rem !important;
+  }
+}
+@media (min-width: 992px) {
+  .navbar {
+    height: 4rem;
+  }
+  .navbar .nav-icon {
+    height: 55% !important;
+  }
+  .navbar .nav-icon img {
+    height: 100%;
+    width: 100%;
+  }
+  #home {
+    height: 90vh;
+  }
+  #home .home-carousel-container {
+    height: 100%;
+  }
+  #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
+    width: 33.33% !important;
+  }
+}/*# sourceMappingURL=style.css.map */

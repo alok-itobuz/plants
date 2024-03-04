@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plant Shop | Home Page</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="../sass/style.css">
+</head>
+
+<body>
+    <nav class="navbar container navbar-expand-lg navbar-light p-0 py-lg-3 mt-2 mt-lg-0 ">
+        <div class="container-fluid m-0 h-100 ">
+            <a class="navbar-brand fw-medium " href="#">My <span>Plants</span></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto ms-lg-2  mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium " aria-current="page" href="#">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium " href="#">Shop</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium " href="#">Plants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium " href="#">Delivery</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link fw-medium " href="#">Help</a>
+                    </li>
+                </ul>
+                <form class="d-flex position-relative w-100
+                ">
+                    <input class="form-control me-2 h-100 d-flex align-items-center justify-content-center "
+                        type="search" placeholder="Search products..." aria-label="Search">
+                    <button class="btn border-0 h-100  position-absolute " type="submit"><img class="h-100 w-100 "
+                            src="../assets/static/search_icon.svg" alt="search icon"></button>
+                </form>
+                <span class="d-inline-flex align-items-center justify-content-center   nav-icon ms-lg-3 mt-3 mt-lg-0 ">
+                    <img src="../assets/static/add_user.svg" alt="add user icon">
+                </span>
+                <span
+                    class="d-inline-flex align-items-center justify-content-center  nav-icon nav-icon-bag ms-3 mt-3 mt-lg-0  position-relative ">
+                    <img src="../assets/static/bag.svg" alt="bag icon">
+                    <span
+                        class="bag-badge d-inline-block position-absolute rounded-circle d-flex align-items-center justify-content-center ">5</span>
+                </span>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="container-xxl position-relative overflow-hidden ">
+        <div class="home-carousel-container m-0 p-0 mt-2  mx-lg-auto p-lg-0 position-relative overflow-hidden ">
+            <!-- ---------  -->
+            <!-- <div class="home-carousel-item w-100 h-100 position-absolute " data-id="0">
+                <div class="home-carousel-body position-relative h-100 w-100 overflow-hidden ">
+                    <img class="w-100 h-100 object-fit-cover " src="../assets/static/home_plant.png" alt="home plant">
+                    <span class="position-absolute text-uppercase ">PILEA PEPEROMIOIDES</span>
+                </div>
+            </div> -->
+            <!-- ---------- -->
+        </div>
+        <div class="home-texts-container container 
+        position-absolute m-0 p-2 p-lg-0 d-flex flex-column justify-content-center gap-2 gap-lg-4 bg-transparent">
+            <h6 class="love-nature m-0 d-flex align-items-center fw-normal position-relative ">
+                Love nature
+                <img class="position-absolute d-none d-lg-block " src="../assets/static/leaf.svg" alt="leaf">
+            </h6>
+            <h1 class="home-main-heading">Take a new <br class="d-none d-md-block " /> friend to your <br
+                    class="d-none d-md-block " /> home</h1>
+            <div class="buttons-container">
+                <button class="btn-home btn-plant-care px-4 py-1">Plant Care</button>
+                <button class="btn-home btm-buy-plant px-4 py-1 ms-2 ms-md-3  ">Buy a plant</button>
+            </div>
+            <div class="social-navigation-container d-flex align-items-center justify-content-between mt-3 ">
+                <div class="social-icons-container h-100 d-flex align-items-center gap-2 gap-md-4 ">
+                    <a class="h-100 d-flex align-items-center justify-content-center " href="#">
+                        <img class="h-100 " src="../assets/static/facebook.svg" alt="facebook icon"></a>
+                    <a class="h-100 d-flex align-items-center justify-content-center " href="#">
+                        <img class="h-100 " src="../assets/static/instagram.svg" alt="instagram icon"></a>
+                    <a class="h-100 d-flex align-items-center justify-content-center " href=" #">
+                        <img class="h-100 " src="../assets/static/pintrest.svg" alt="pintrest icon"></a>
+                </div>
+                <div
+                    class="carausel-navigation-container d-flex align-items-center justify-content-center gap-2 h-100 ">
+                    <button
+                        class="btn-carousel-left h-100 d-flex align-items-center justify-content-center border-0 bg-transparent ">
+                        <span class="triangle-left"></span>
+                    </button>
+                    <span class="text-carousel-prev h-100 d-flex align-items-center justify-content-center ">3</span>
+                    <p
+                        class="home-carousel-slider flex-grow-1 d-flex align-items-center justify-content-center  m-0 position-relative border-0 ">
+
+                        <!-- <span class="home-carousel-slider-span h-100  border-0 ">
+                        </span> -->
+                    </p>
+                    <span class="text-carousel-next h-100 d-flex align-items-center justify-content-center ">2</span>
+                    <button
+                        class="btn-carousel-right h-100 d-flex align-items-center justify-content-center border-0 bg-transparent "><span
+                            class="triangle-left"></span></button>
+                </div>
+            </div>
+        </div>
+
+    </section>
+
+    <section id="collection" class="container d-flex flex-column align-items-center">
+        <h2 class=" text-center m-0 fw-semibold my-4">Plant Collection</h2>
+        <div class=" collection-carousel-container d-flex flex-column  flex-md-row flex-grow-1 w-100 gap-md-2  ">
+            <div class="collection-carousel flex-grow-1 w-100 position-relative overflow-hidden ">
+                <!-- <div class="collection-carousel-item h-100 w-100 position-absolute p-md-2 p-lg-3 ">
+                    <div class="carousel-item-body h-100 w-100 d-flex flex-column">
+                        <div class="carousel-image-container flex-grow-1 overflow-hidden ">
+                            <img class="object-fit-cover " src="../assets/static/plant_0.png" alt="plant">
+                        </div>
+                        <h4 class="fw-semibold m-0 d-flex align-items-center ">Bird of paradise
+                        </h4>
+                    </div>
+                </div> -->
+            </div>
+            <div
+                class="collection-carousel-buttons d-flex flex-md-column  align-items-center justify-content-center gap-3 mt-2 mt-md-0 ">
+                <button class="btn-collection-prev rounded-circle h-100 bg-transparent fw-normal ">
+                    < </button>
+                        <button class="btn-collection-next rounded-circle h-100 bg-transparent fw-normal ">></button>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Scripts  -->
+    <script src="../scripts/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
