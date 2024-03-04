@@ -182,7 +182,14 @@ body {
   transition: all 0.3s ease;
 }
 #collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container {
+  transition: all 0.2s ease;
   height: 90%;
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container img:nth-child(2) {
+  opacity: 0;
+  transition: all 0.3s ease;
+  height: 130% !important;
+  translate: 5%;
 }
 #collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container img {
   height: 100%;
@@ -190,13 +197,28 @@ body {
   -o-object-fit: cover;
      object-fit: cover;
 }
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container:hover {
+  transform: perspective(2500px) rotateX(25deg) !important;
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container:hover img:nth-child(2) {
+  opacity: 1;
+  transform: translateY(-20%) rotateX(-25deg);
+  -webkit-backdrop-filter: blur(5px);
+          backdrop-filter: blur(5px);
+}
+#collection .collection-carousel-container .collection-carousel .collection-carousel-item .carousel-image-container:hover h4 {
+  transform: translateY(-80%);
+}
 #collection .collection-carousel-container .collection-carousel .collection-carousel-item h4 {
   height: 10%;
   font-family: "Playfair Display", serif;
   font-size: 1.2rem;
+  transition: all 0.3s ease;
+  transform: translateZ(1rem);
 }
 #collection .collection-carousel-container .collection-carousel-buttons {
   height: 2rem;
+  background: var(--white-color);
 }
 #collection .collection-carousel-container .collection-carousel-buttons button {
   border: 1px solid var(--black-color);

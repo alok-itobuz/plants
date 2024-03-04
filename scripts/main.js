@@ -34,8 +34,9 @@ function createCollectionCarouselCard(i) {
     return `
     <div class="collection-carousel-item h-100 w-100 position-absolute p-1 p-md-2 p-lg-3 " data-id=${i}>
         <div class="carousel-item-body h-100 w-100 d-flex flex-column">
-            <div class="carousel-image-container flex-grow-1 overflow-hidden ">
+            <div class="carousel-image-container flex-grow-1 overflow-hidden position-relative">
                 <img class="object-fit-cover " src="../assets/static/collection/plant_${i % 3}.svg" alt="plant">
+                <img class="object-fit-cover position-absolute start-0 top-0 w-100 h-100" src="../assets/static/collection/wrap_plant_${i % 3}.png" alt="plant">
             </div>
             <h4 class="fw-semibold m-0 d-flex align-items-center ">Bird of paradise
             </h4>
@@ -47,7 +48,7 @@ function createCollectionCarouselCard(i) {
 // change slide according to the current page
 
 
-const totalHomeCarouselItem = 3;
+const totalHomeCarouselItem = 5;
 for (let i = 0; i < totalHomeCarouselItem; i++) {
     homeCarouselContainer.insertAdjacentHTML("beforeend", createCarouselCard(i));
     homeCarouselSlider.insertAdjacentHTML("beforeend", createSliderSpan(i));
@@ -65,8 +66,9 @@ const displayCarouselItem = (
     for (let i = 0; i < totalCarouselItem; i++) {
         const currentItem = carouselContainer.children[i];
 
-        currentItem.style.transform = `translateX(${(+currentItem.dataset.id - currentCarouselItem) * translateFactor
-            }%) ${translateY ? "translateY(-50%)" : ""}`;
+        currentItem.style.translate = `${(+currentItem.dataset.id - currentCarouselItem) * translateFactor}% ${translateY ? "-50%" : ""}`;
+        // currentItem.style.transform = `translateX(${(+currentItem.dataset.id - currentCarouselItem) * translateFactor
+        //     }%) ${translateY ? "translateY(-50%)" : ""}`;
 
         currentItem.classList.remove("active");
 
@@ -102,9 +104,9 @@ const removeActiveClasses = (container, currentSlide) => [...container.children]
 const setHomeSliderActiveAndChangeNumber = () => {
     removeActiveClasses(homeCarouselSlider, currentHomeCarouselItem)
     homeTextCarouselPrev.textContent =
-        +currentHomeCarouselItem === 0 ? 3 : +currentHomeCarouselItem;
+        +currentHomeCarouselItem === 0 ? totalHomeCarouselItem : +currentHomeCarouselItem;
     homeTextCarouselNext.textContent =
-        +currentHomeCarouselItem === 2 ? 1 : +currentHomeCarouselItem + 2;
+        +currentHomeCarouselItem === totalHomeCarouselItem - 1 ? 1 : +currentHomeCarouselItem + 2;
 };
 
 const changeHomeSlide = (choice, toUpdateCurrentSlide = true) => {
@@ -164,6 +166,7 @@ collectionCarouselButtonsContainer.addEventListener("click", (e) => {
         totalHomeCarouselItem,
         currentHomeCarouselItem
     );
+    setHomeSliderActiveAndChangeNumber()
     displayCarouselItem(
         collectionCarouselContainer,
         100,
