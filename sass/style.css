@@ -1,15 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 :root {
-  --green-color: #3E8847;
-  --dark-green-color: #4A4E1C;
-  --light-green-color: #3E8646;
-  --very-light-green-color: #92B896;
-  --black-color: #09270D;
-  --dark-grey-color: #7D807E;
+  --green-color: #3e8847;
+  --dark-green-color: #4a4e1c;
+  --light-green-color: #3e8646;
+  --very-light-green-color: #92b896;
+  --black-color: #09270d;
+  --dark-grey-color: #7d807e;
   --grey-color: #727272;
-  --light-grey-color: #C0C0C0;
+  --light-grey-color: #c0c0c0;
   --white-color: #fff;
-  --yellow-color: #F5C771;
+  --yellow-color: #f5c771;
 }
 
 * {
@@ -71,15 +71,15 @@ body {
 }
 #home .home-carousel-container .home-carousel-item .home-carousel-body {
   border-radius: 1rem;
+  overflow: hidden;
 }
 #home .home-carousel-container .home-carousel-item .home-carousel-body img {
   height: 100%;
   width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
+  -o-object-fit: cover;
+     object-fit: cover;
   -o-object-position: center;
      object-position: center;
-  background: var(--grey-color);
 }
 #home .home-carousel-container .home-carousel-item .home-carousel-body span {
   font-size: 0.6rem;
@@ -98,7 +98,6 @@ body {
   content: "";
   height: 0.1rem;
   width: 2.5rem;
-  background: var(--light-grey-color);
   margin-right: 0.5rem;
 }
 #home .home-texts-container .love-nature img {
@@ -154,12 +153,15 @@ body {
   font-size: 0.8rem;
 }
 #home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider {
-  height: 0.1rem;
+  height: 0.2rem;
   background: var(--very-light-green-color);
+  transition: all 0.2s ease;
 }
 #home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider span {
   flex: 1;
-  transition: al 0.2s ease;
+  transition: all 0.2s ease;
+  border: 0;
+  background: transparent;
 }
 #home .home-texts-container .social-navigation-container .carausel-navigation-container p.home-carousel-slider span:hover {
   background: rgba(0, 0, 0, 0.1333333333);
@@ -210,17 +212,28 @@ body {
     height: 70vh;
   }
   #home .home-carousel-container {
-    width: 80%;
-    left: 20% !important;
+    width: 65%;
+    left: 35% !important;
     height: 100%;
   }
   #home .home-carousel-container .home-carousel-item {
-    width: 80% !important;
-    aspect-ratio: 3/2;
+    width: 70% !important;
+    aspect-ratio: 4/3;
+  }
+  #home .home-carousel-container .home-carousel-item .home-carousel-body {
+    height: 95% !important;
+  }
+  #home .home-carousel-container .home-carousel-item .home-carousel-body img {
+    width: unset !important;
   }
   #home .home-carousel-container .home-carousel-item.active {
-    height: 70% !important;
+    height: 50% !important;
+    width: 68% !important;
     z-index: 1;
+  }
+  #home .home-carousel-container .home-carousel-item.active .home-carousel-body {
+    height: 100%;
+    width: 100%;
   }
   #home .home-texts-container {
     z-index: 5;
@@ -277,7 +290,12 @@ body {
     height: 90vh;
   }
   #home .home-carousel-container {
+    width: 80%;
+    left: 20% !important;
     height: 100%;
+  }
+  #home .home-carousel-container .home-carousel-item.active {
+    height: 70% !important;
   }
   #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
     width: 33.33% !important;
