@@ -1,0 +1,63 @@
+<section id="clients" class="container">
+    <h2 class="m-0 my-4 ">What clients talk about us</h2>
+    <div
+        class="clients-carousel-container w-100 position-relative overflow-hidden mx-auto mx-md-0 d-flex align-items-center ">
+        <div
+            class="client-carousel-item h-100 w-100  position-relative d-flex flex-column  justify-content-around align-items-center p-4">
+            <div class="client-image rounded-circle overflow-hidden ">
+                <img class="h-100 " src="../assets/static/clients/client_1.svg" alt="">
+            </div>
+            <div class="client-description d-flex flex-column  justify-content-center   position-relative w-100">
+                <span class="d-inline-block double-quotes "></span>
+                <p class="fw-normal m-0 ">1It is a long established fact that a reader will be distracted by the
+                    readable content of a
+                    page when It is a long .It is a long .It is a long established fact that a reader will be .
+                    It is a long established fact that a reader .</p>
+                <span class="d-inline-block double-quotes position-absolute"></span>
+            </div><button
+                class="client-carousel-button d-flex d-md-none position-absolute  justify-content-center align-items-center rounded-circle ">
+                <img src="../assets/static/clients/arrow_right.svg" alt="right arrow">
+            </button>
+        </div>
+        <div
+            class="client-carousel-item h-100 w-100  position-relative d-flex flex-column  justify-content-around align-items-center p-4">
+            <div class="client-image rounded-circle overflow-hidden ">
+                <img class="h-100 " src="../assets/static/clients/client_1.svg" alt="">
+            </div>
+            <div class="client-description d-flex flex-column  justify-content-center   position-relative w-100">
+                <span class="d-inline-block double-quotes "></span>
+                <p class="fw-normal m-0 ">1It is a long established fact that a reader will be distracted by the
+                    readable content of a
+                    page when It is a long .It is a long .It is a long established fact that a reader will be .
+                    It is a long established fact that a reader .</p>
+                <span class="d-inline-block double-quotes position-absolute"></span>
+            </div><button
+                class="client-carousel-button d-flex d-md-none position-absolute  justify-content-center align-items-center rounded-circle ">
+                <img src="../assets/static/clients/arrow_right.svg" alt="right arrow">
+            </button>
+        </div>
+        <div
+            class="client-carousel-item h-100 w-100  position-relative d-flex flex-column  justify-content-around align-items-center p-4">
+            <div class="client-image rounded-circle overflow-hidden ">
+                <img class="h-100 " src="../assets/static/clients/client_1.svg" alt="">
+            </div>
+            <div class="client-description d-flex flex-column  justify-content-center   position-relative w-100">
+                <span class="d-inline-block double-quotes "></span>
+                <p class="fw-normal m-0 ">1It is a long established fact that a reader will be distracted by the
+                    readable content of a
+                    page when It is a long .It is a long .It is a long established fact that a reader will be .
+                    It is a long established fact that a reader .</p>
+                <span class="d-inline-block double-quotes position-absolute"></span>
+            </div><button
+                class="client-carousel-button d-flex d-md-none position-absolute  justify-content-center align-items-center rounded-circle ">
+                <img src="../assets/static/clients/arrow_right.svg" alt="right arrow">
+            </button>
+        </div>
+
+        <!-- Small Screen Button  -->
+        <!-- <button
+                class="client-carousel-button d-flex d-md-none position-absolute  justify-content-center align-items-center rounded-circle ">
+                <img src="../assets/static/clients/arrow_right.svg" alt="right arrow">
+            </button> -->
+    </div>
+</section>
