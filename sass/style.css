@@ -10,7 +10,7 @@
   --light-grey-color: #c0c0c0;
   --white-color: #fff;
   --yellow-color: #f5c771;
-  --deep-white-color: #FAF9F7;
+  --deep-white-color: #faf9f7;
 }
 
 * {
@@ -100,11 +100,14 @@ body {
   height: 0.1rem;
   width: 2.5rem;
   margin-right: 0.5rem;
+  background: #d4d4d4;
 }
 #home .home-texts-container .love-nature img {
   height: 3rem;
-  top: -2rem;
+  top: -5rem;
   left: 1.2rem;
+  transform: rotate(320deg);
+  filter: drop-shadow(-50px 30px 7px rgba(2, 22, 5, 0.0666666667));
 }
 #home .home-texts-container .home-main-heading {
   font-size: 1.8rem;
@@ -250,27 +253,45 @@ body {
 #clients .clients-carousel-container .client-carousel-item {
   min-width: 100%;
   aspect-ratio: 3/4;
-  background: var(--green-color);
+  color: var(--black-color);
+  background: var(--white-color);
   border-radius: 1rem;
+  transition: all 0.2s ease;
+}
+#clients .clients-carousel-container .client-carousel-item.active {
+  background: var(--green-color);
+  color: var(--white-color);
+}
+#clients .clients-carousel-container .client-carousel-item.active .double-quotes {
+  filter: unset !important;
 }
 #clients .clients-carousel-container .client-carousel-item .client-image {
   height: 40%;
 }
 #clients .clients-carousel-container .client-carousel-item .client-description {
   height: 60%;
+  transition: all 0.2s ease;
+  color: var(--black-color);
+  background: var(--white-color);
+}
+#clients .clients-carousel-container .client-carousel-item .client-description.active {
+  background: var(--green-color);
+}
+#clients .clients-carousel-container .client-carousel-item .client-description.active p {
+  color: var(--white-color);
 }
 #clients .clients-carousel-container .client-carousel-item .client-description p {
   font-size: 0.9rem;
-  color: var(--white-color);
 }
 #clients .clients-carousel-container .client-carousel-item .client-description .double-quotes {
   width: 1.5rem;
   height: 1.5rem;
-  background: aqua;
+  filter: invert(100%);
 }
 #clients .clients-carousel-container .client-carousel-item .client-description .double-quotes:last-child {
   bottom: 1rem;
   right: 1rem;
+  transform: rotate(180deg);
 }
 #clients .clients-carousel-container .client-carousel-item .client-carousel-button {
   background: var(--white-color);
@@ -283,6 +304,57 @@ body {
   right: unset;
   left: 0.3rem;
   rotate: 180deg;
+}
+
+#journey {
+  height: 50vh;
+  overflow: hidden;
+}
+#journey .image-container {
+  transform-style: preserve-3d;
+  transform-origin: center;
+  position: absolute;
+  width: 140%;
+  aspect-ratio: 4/5;
+  background: radial-gradient(#146b20 20%, #104e18);
+  border-radius: 50% 50% 0 0;
+  left: 55%;
+  transform: translateX(-50%) rotateZ(27deg) rotateY(322deg) perspective(1200px);
+  z-index: -1;
+}
+#journey .image-container img {
+  height: 100%;
+  width: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+  transform-origin: bottom;
+  transform: rotateX(330deg) rotateY(7deg);
+}
+#journey .text-container {
+  background: rgba(255, 255, 255, 0.8666666667);
+  height: 100%;
+  width: 100%;
+}
+#journey .text-container h2 {
+  font-family: "Playfair Display", serif;
+}
+#journey .text-container p {
+  font-family: "Playfair Display", serif;
+  font-size: 0.7rem;
+  max-width: 20rem;
+}
+#journey .text-container button {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 0.2rem 1rem;
+  border-radius: 5rem;
+  border: 1px solid var(--black-color);
+  background: transparent;
+  font-size: 0.7rem;
+}
+#journey .text-container button:hover {
+  background: var(--black-color);
+  color: var(--white-color);
 }
 
 #askus {
@@ -305,7 +377,26 @@ body {
 #askus form input,
 #askus form textarea {
   font-size: 0.8rem;
-  border-bottom: 1px solid #ECECEC !important;
+  border-bottom: 1px solid #ececec !important;
+}
+#askus form input:active, #askus form input:focus, #askus form input:hover,
+#askus form textarea:active,
+#askus form textarea:focus,
+#askus form textarea:hover {
+  outline: none;
+}
+#askus form textarea {
+  position: relative;
+}
+#askus form textarea::-moz-placeholder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+}
+#askus form textarea::placeholder {
+  position: absolute;
+  bottom: 0;
+  left: 0;
 }
 #askus form .btn-links-container {
   height: 1.5rem;
@@ -385,6 +476,121 @@ body {
     width: 2rem !important;
     height: 2rem !important;
   }
+  #journey {
+    height: 70vh;
+    overflow: hidden;
+  }
+  #journey > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  #journey > div .random-leaf {
+    top: 0;
+    left: 2rem;
+    height: 3rem;
+    transform: rotate(331deg);
+    filter: drop-shadow(-30px 20px 7px rgba(2, 22, 5, 0.0666666667));
+  }
+  #journey > div .image-container {
+    position: relative;
+    width: 40%;
+    height: 70%;
+    margin-top: auto;
+    aspect-ratio: unset;
+    left: unset;
+    transform: unset;
+    z-index: unset;
+  }
+  #journey > div .image-container img {
+    height: 130%;
+    position: absolute;
+    bottom: 0;
+    transform: unset;
+  }
+  #journey > div .text-container {
+    background: transparent;
+    width: 50%;
+  }
+  #journey > div .text-container p {
+    font-size: 0.8rem;
+    max-width: unset;
+  }
+  #journey > div .text-container button {
+    padding: 0.3rem 1.2rem;
+    border-radius: 5rem;
+    border: 1px solid var(--black-color);
+    font-size: 0.8rem;
+  }
+  #journey > div .side-plant {
+    height: 13rem;
+    right: 0;
+    top: 0;
+  }
+  #askus {
+    height: 55vh;
+  }
+  #askus .image-container {
+    width: 55% !important;
+    border-radius: 1.2rem;
+    overflow: hidden;
+  }
+  #askus .image-container img {
+    height: 100% !important;
+    width: 100% !important;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+  #askus form {
+    border-radius: 1.2rem;
+    max-width: unset;
+    height: 90%;
+    width: 55%;
+    left: unset;
+    right: 0;
+    transform: translateY(-50%);
+    padding: 0 1.5rem !important;
+  }
+  #askus form h2 {
+    font-size: 1.5rem;
+    margin-bottom: 0.6rem;
+  }
+  #askus form input,
+  #askus form textarea {
+    font-size: 0.9rem;
+  }
+  #askus form .btn-links-container {
+    height: 2rem;
+  }
+  #askus form .btn-links-container button {
+    font-size: 0.9rem;
+  }
+  #askus .leaf-container {
+    height: 5rem;
+    width: 15rem;
+    right: 1rem;
+    bottom: -2rem;
+  }
+  #askus .leaf-container > div img {
+    height: 3rem;
+    transform-origin: center;
+    filter: drop-shadow(-50px 30px 7px rgba(2, 22, 5, 0.0666666667));
+  }
+  #askus .leaf-container > div img:first-child {
+    top: 3rem;
+  }
+  #askus .leaf-container > div img:nth-child(2) {
+    right: 4rem;
+    height: 3rem;
+    top: 3rem;
+    transform: rotate(195deg);
+    filter: drop-shadow(0px -30px 7px rgba(2, 22, 5, 0.0666666667));
+  }
+  #askus .leaf-container > div img:last-child {
+    right: 0;
+    top: 0;
+    transform: rotate(313deg);
+  }
   #clients .clients-carousel-container {
     height: 10rem;
   }
@@ -393,9 +599,11 @@ body {
     max-width: 60%;
     background: transparent;
   }
+  #clients .clients-carousel-container .client-carousel-item.active {
+    background: transparent;
+  }
   #clients .clients-carousel-container .client-carousel-item .client-image {
     position: absolute;
-    background: #abcdef;
     height: unset;
     width: 20%;
     aspect-ratio: 1/1;
@@ -409,15 +617,12 @@ body {
     margin-left: auto;
     padding-left: 3.3rem;
     border-radius: 0.5rem;
-  }
-  #clients .clients-carousel-container .client-carousel-item .client-description.active {
-    background: var(--green-color);
+    background: var(--white-color);
   }
   #clients .clients-carousel-container .client-carousel-item .client-description p {
     font-size: 0.6rem;
   }
   #clients .clients-carousel-container .client-carousel-item .client-description .double-quotes {
-    background: aqua;
     width: 1rem;
     height: 1rem;
   }
@@ -469,6 +674,13 @@ body {
   #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
     width: 33.33% !important;
   }
+  #journey {
+    height: 90vh;
+    overflow: hidden;
+  }
+  #askus {
+    height: 60vh;
+  }
   #clients .clients-carousel-container {
     height: 13rem;
   }
@@ -490,6 +702,20 @@ body {
   }
 }
 @media (min-width: 1200px) {
+  #journey {
+    height: 90vh;
+    overflow: hidden;
+  }
+  #journey > div .text-container {
+    width: 50%;
+  }
+  #journey > div .text-container p {
+    font-size: 1rem;
+  }
+  #journey > div .text-container button {
+    padding: 0.5rem 1.5rem;
+    font-size: 0.9rem;
+  }
   #clients .clients-carousel-container {
     height: 13rem;
   }
@@ -497,10 +723,15 @@ body {
     width: 16%;
   }
   #clients .clients-carousel-container .client-carousel-item .client-description {
+    margin-left: 3.5rem;
     width: 92% !important;
+    padding: 0 3.5rem 0 4rem;
   }
 }
 @media (min-width: 1400px) {
+  #journey .image-container {
+    width: 30% !important;
+  }
   #clients .clients-carousel-container {
     height: 13rem;
   }
@@ -508,7 +739,9 @@ body {
     width: 16%;
   }
   #clients .clients-carousel-container .client-carousel-item .client-description {
-    width: 86% !important;
-    padding-right: 1rem;
+    padding: 0 3.5rem 0 5rem;
+  }
+  #clients .clients-carousel-container .client-carousel-item .client-description p {
+    font-size: 0.85rem;
   }
 }/*# sourceMappingURL=style.css.map */
