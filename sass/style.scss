@@ -1,22 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @mixin setFontFamily($fontFamily) {
-  @if ($fontFamily =="poppins") {
+  @if ($fontFamily == "poppins") {
     font-family: "Poppins", sans-serif;
-  }
-
-  @else {
+  } @else {
     font-family: "Playfair Display", serif;
   }
 }
 
 @mixin absoluteAlignCenter($direction) {
-  @if ($direction =="top") {
+  @if ($direction == "top") {
     top: 50%;
     transform: translateY(-50%);
-  }
-
-  @else {
+  } @else {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -33,7 +29,7 @@
   --light-grey-color: #c0c0c0;
   --white-color: #fff;
   --yellow-color: #f5c771;
-  --deep-white-color: #FAF9F7;
+  --deep-white-color: #faf9f7;
 }
 
 * {
@@ -132,12 +128,15 @@ body {
         height: 0.1rem;
         width: 2.5rem;
         margin-right: 0.5rem;
+        background: #d4d4d4;
       }
 
       img {
         height: 3rem;
-        top: -2rem;
+        top: -5rem;
         left: 1.2rem;
+        transform: rotate(320deg);
+        filter: drop-shadow(-50px 30px 7px #02160511);
       }
     }
 
@@ -305,13 +304,13 @@ body {
 
 #clients {
   h2 {
-    @include setFontFamily('playfair')
+    @include setFontFamily("playfair");
   }
 
   .clients-carousel-container {
     height: 25rem;
 
-    @media (min-width:490px) {
+    @media (min-width: 490px) {
       height: 15rem;
 
       .double-quotes:last-child {
@@ -319,16 +318,26 @@ body {
       }
     }
 
-
     .carousel-wrapper {
-      transition: all .3s ease;
+      transition: all 0.3s ease;
     }
 
     .client-carousel-item {
       min-width: 100%;
       aspect-ratio: 3/4;
-      background: var(--green-color);
+      color: var(--black-color);
+      background: var(--white-color);
       border-radius: 1rem;
+      transition: all 0.2s ease;
+
+      &.active {
+        background: var(--green-color);
+        color: var(--white-color);
+
+        .double-quotes {
+          filter: unset !important;
+        }
+      }
 
       .client-image {
         height: 40%;
@@ -336,20 +345,28 @@ body {
 
       .client-description {
         height: 60%;
-
+        transition: all 0.2s ease;
+        color: var(--black-color);
+        background: var(--white-color);
+        &.active {
+          background: var(--green-color);
+          p {
+            color: var(--white-color);
+          }
+        }
         p {
-          font-size: .9rem;
-          color: var(--white-color);
+          font-size: 0.9rem;
         }
 
         .double-quotes {
           width: 1.5rem;
           height: 1.5rem;
-          background: aqua;
+          filter: invert(100%);
 
           &:last-child {
             bottom: 1rem;
             right: 1rem;
+            transform: rotate(180deg);
           }
         }
       }
@@ -358,17 +375,67 @@ body {
         background: var(--white-color);
         z-index: 2;
         border: none;
-        right: .3rem;
-        top: .3rem;
+        right: 0.3rem;
+        top: 0.3rem;
 
         &.prev {
           right: unset;
-          left: .3rem;
+          left: 0.3rem;
           rotate: 180deg;
         }
       }
     }
+  }
+}
 
+#journey {
+  height: 50vh;
+  overflow: hidden;
+
+  .image-container {
+    transform-style: preserve-3d;
+    transform-origin: center;
+    position: absolute;
+    width: 140%;
+    aspect-ratio: 4 / 5;
+    background: radial-gradient(#146b20 20%, #104e18);
+    border-radius: 50% 50% 0 0;
+    left: 55%;
+    transform: translateX(-50%) rotateZ(27deg) rotateY(322deg)
+      perspective(1200px);
+    z-index: -1;
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: contain;
+      transform-origin: bottom;
+      transform: rotateX(330deg) rotateY(7deg);
+    }
+  }
+  .text-container {
+    background: #fffd;
+    height: 100%;
+    width: 100%;
+    h2 {
+      @include setFontFamily("playfair");
+    }
+    p {
+      @include setFontFamily("playfair");
+      font-size: 0.7rem;
+      max-width: 20rem;
+    }
+    button {
+      width: fit-content;
+      padding: 0.2rem 1rem;
+      border-radius: 5rem;
+      border: 1px solid var(--black-color);
+      background: transparent;
+      font-size: 0.7rem;
+      &:hover {
+        background: var(--black-color);
+        color: var(--white-color);
+      }
+    }
   }
 }
 
@@ -383,24 +450,39 @@ body {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    background: rgba($color: #FAF9F7, $alpha: 0.99);
-    border-radius: .5rem;
+    background: rgba($color: #faf9f7, $alpha: 0.99);
+    border-radius: 0.5rem;
 
     h2 {
-      @include setFontFamily('playfair');
+      @include setFontFamily("playfair");
     }
 
     input,
     textarea {
-      font-size: .8rem;
-      border-bottom: 1px solid #ECECEC !important;
+      font-size: 0.8rem;
+      border-bottom: 1px solid #ececec !important;
+
+      &:active,
+      &:focus,
+      &:hover {
+        outline: none;
+      }
+    }
+
+    textarea {
+      position: relative;
+      &::placeholder {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+      }
     }
 
     .btn-links-container {
       height: 1.5rem;
 
       button {
-        font-size: .7rem;
+        font-size: 0.7rem;
         border: 1px solid var(--black-color);
         border-radius: 1rem;
 
@@ -501,6 +583,135 @@ body {
     }
   }
 
+  #journey {
+    height: 70vh;
+    overflow: hidden;
+    > div {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      .random-leaf {
+        top: 0;
+        left: 2rem;
+        height: 3rem;
+        transform: rotate(331deg);
+        filter: drop-shadow(-30px 20px 7px #02160511);
+      }
+
+      .image-container {
+        position: relative;
+        width: 40%;
+        height: 70%;
+        margin-top: auto;
+        aspect-ratio: unset;
+        left: unset;
+        transform: unset;
+        z-index: unset;
+        img {
+          height: 130%;
+          position: absolute;
+          bottom: 0;
+          transform: unset;
+        }
+      }
+      .text-container {
+        background: transparent;
+        // height: 100%;
+        width: 50%;
+        h2 {
+        }
+        p {
+          font-size: 0.8rem;
+          max-width: unset;
+        }
+        button {
+          padding: 0.3rem 1.2rem;
+          border-radius: 5rem;
+          border: 1px solid var(--black-color);
+          font-size: 0.8rem;
+        }
+      }
+
+      .side-plant {
+        height: 13rem;
+        right: 0;
+        top: 0;
+      }
+    }
+  }
+
+  #askus {
+    height: 55vh;
+
+    .image-container {
+      width: 55% !important;
+      border-radius: 1.2rem;
+      overflow: hidden;
+      img {
+        height: 100% !important;
+        width: 100% !important;
+        object-fit: cover;
+      }
+    }
+    form {
+      border-radius: 1.2rem;
+      max-width: unset;
+      height: 90%;
+      width: 55%;
+      left: unset;
+      right: 0;
+      transform: translateY(-50%);
+      padding: 0 1.5rem !important;
+
+      h2 {
+        font-size: 1.5rem;
+        margin-bottom: 0.6rem;
+      }
+      input,
+      textarea {
+        font-size: 0.9rem;
+      }
+
+      .btn-links-container {
+        height: 2rem;
+
+        button {
+          font-size: 0.9rem;
+        }
+      }
+    }
+
+    .leaf-container {
+      height: 5rem;
+      width: 15rem;
+      right: 1rem;
+      bottom: -2rem;
+      > div {
+        img {
+          height: 3rem;
+          transform-origin: center;
+          filter: drop-shadow(-50px 30px 7px #02160511);
+          &:first-child {
+            top: 3rem;
+          }
+          &:nth-child(2) {
+            right: 4rem;
+            height: 3rem;
+            top: 3rem;
+            transform: rotate(195deg);
+            filter: drop-shadow(0px -30px 7px #02160511);
+          }
+          &:last-child {
+            right: 0;
+            top: 0;
+            transform: rotate(313deg);
+          }
+        }
+      }
+    }
+  }
+
   #clients {
     .clients-carousel-container {
       height: 10rem;
@@ -511,9 +722,12 @@ body {
 
         background: transparent;
 
+        &.active {
+          background: transparent;
+        }
+
         .client-image {
           position: absolute;
-          background: #abcdef;
           height: unset;
           width: 20%;
           aspect-ratio: 1/1;
@@ -522,33 +736,29 @@ body {
         }
 
         .client-description {
-          box-shadow: 0 34px 55px -22px rgba($color: #021605, $alpha: .09);
+          box-shadow: 0 34px 55px -22px rgba($color: #021605, $alpha: 0.09);
           height: 100%;
           width: 90% !important;
           margin-left: auto;
           padding-left: 3.3rem;
-          border-radius: .5rem;
-
-          &.active {
-            background: var(--green-color);
-          }
+          border-radius: 0.5rem;
+          background: var(--white-color);
 
           p {
-            font-size: .6rem;
+            font-size: 0.6rem;
           }
 
           .double-quotes {
-            background: aqua;
             width: 1rem;
             height: 1rem;
 
             &:first-child {
-              margin-left: -.5rem;
-              margin-bottom: .6rem;
+              margin-left: -0.5rem;
+              margin-bottom: 0.6rem;
             }
 
             &:last-child {
-              bottom: .4rem !important;
+              bottom: 0.4rem !important;
               right: 1rem;
             }
           }
@@ -564,10 +774,9 @@ body {
           min-height: 1.5rem;
           border: 1px solid black !important;
           position: unset;
-          transition: all .2s easefff;
+          transition: all 0.2s easefff;
 
           &.prev {
-
             transform: rotate(180deg);
           }
         }
@@ -604,8 +813,20 @@ body {
     }
   }
 
-  #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
+  #collection
+    .collection-carousel-container
+    .collection-carousel
+    .collection-carousel-item {
     width: 33.33% !important;
+  }
+
+  #journey {
+    height: 90vh;
+    overflow: hidden;
+  }
+
+  #askus {
+    height: 60vh;
   }
 
   #clients {
@@ -617,7 +838,7 @@ body {
           margin-left: 4rem;
 
           p {
-            font-size: .7rem;
+            font-size: 0.7rem;
           }
 
           .double-quotes {
@@ -629,7 +850,7 @@ body {
             }
 
             &:last-child {
-              bottom: .6rem !important;
+              bottom: 0.6rem !important;
             }
           }
         }
@@ -639,6 +860,23 @@ body {
 }
 
 @media (min-width: 1200px) {
+  #journey {
+    height: 90vh;
+    overflow: hidden;
+    > div {
+      .text-container {
+        width: 50%;
+        p {
+          font-size: 1rem;
+        }
+        button {
+          padding: 0.5rem 1.5rem;
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+
   #clients {
     .clients-carousel-container {
       height: 13rem;
@@ -649,7 +887,9 @@ body {
         }
 
         .client-description {
+          margin-left: 3.5rem;
           width: 92% !important;
+          padding: 0 3.5rem 0 4rem;
         }
       }
     }
@@ -657,6 +897,11 @@ body {
 }
 
 @media (min-width: 1400px) {
+  #journey {
+    .image-container {
+      width: 30% !important;
+    }
+  }
   #clients {
     .clients-carousel-container {
       height: 13rem;
@@ -667,8 +912,10 @@ body {
         }
 
         .client-description {
-          width: 86% !important;
-          padding-right: 1rem;
+          padding: 0 3.5rem 0 5rem;
+          p {
+            font-size: 0.85rem;
+          }
         }
       }
     }
