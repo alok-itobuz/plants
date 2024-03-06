@@ -22,6 +22,12 @@
   box-sizing: border-box;
   color: var(--black-color);
   font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }
 
 body {
@@ -52,6 +58,9 @@ body {
   right: 0;
   top: 50%;
   transform: translateY(-50%);
+}
+.navbar .nav-icon:hover {
+  cursor: pointer;
 }
 .navbar .nav-icon-bag span {
   height: 65%;
@@ -463,6 +472,7 @@ body {
 #advantage .cards-container .card {
   aspect-ratio: 5/2;
   max-width: 20rem;
+  background: transparent !important;
 }
 #advantage .cards-container .card .image-container {
   background: var(--green-color);

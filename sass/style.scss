@@ -45,6 +45,12 @@
   box-sizing: border-box;
   color: var(--black-color);
   font-family: inherit;
+  transition: all .3s ease;
+}
+
+a:hover,
+button:hover {
+  cursor: pointer;
 }
 
 body {
@@ -77,6 +83,10 @@ body {
       right: 0;
       @include absoluteAlignCenter("top");
     }
+  }
+
+  .nav-icon:hover {
+    cursor: pointer;
   }
 
   .nav-icon-bag {
@@ -580,6 +590,7 @@ body {
     .card {
       aspect-ratio: 5/2;
       max-width: 20rem;
+      background: transparent !important;
 
       .image-container {
         background: var(--green-color);
