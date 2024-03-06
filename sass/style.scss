@@ -17,6 +17,9 @@
     transform: translateX(-50%);
   }
 }
+html {
+  overflow-x: hidden;
+}
 
 :root {
   overflow-x: hidden;
