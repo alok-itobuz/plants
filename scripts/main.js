@@ -1,3 +1,35 @@
+//scroll animation
+const allSections = document.querySelectorAll("section");
+allSections.forEach((section, i) => {
+  i % 2 == 0
+    ? section.classList.add("left-translate")
+    : section.classList.add("right-translate");
+
+  i % 2 == 0
+    ? (section.dataset.classTranslate = "left-translate")
+    : (section.dataset.classTranslate = "right-translate");
+});
+
+// console.log(document.querySelector("nav").getBoundingClientRect().height);
+const removeSectionTranslation = (entries, observer) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      entry.target.classList.remove(entry.target.dataset.classTranslate);
+      observer.unobserve(entry.target);
+    }
+  });
+};
+const sectionObserver = new IntersectionObserver(removeSectionTranslation, {
+  root: null,
+  rootMargin: `-${
+    document.querySelector("nav").getBoundingClientRect().height
+  }px`,
+  threshold: 0.25,
+});
+allSections.forEach((section) => sectionObserver.observe(section));
+
+////////////
+
 const homeCarouselContainer = document.querySelector(
   ".home-carousel-container"
 );

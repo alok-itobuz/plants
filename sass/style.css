@@ -1036,4 +1036,15 @@ footer .copyright-row span {
   #clients .clients-carousel-container .client-carousel-item .client-description p {
     font-size: 0.85rem;
   }
+}
+.left-translate {
+  transform: translateX(-60%);
+}
+
+.right-translate {
+  transform: translateX(60%);
+}
+
+section {
+  transition: all 1s ease;
 }/*# sourceMappingURL=style.css.map */

@@ -1336,3 +1336,15 @@ footer {
     }
   }
 }
+
+.left-translate {
+  transform: translateX(-60%);
+}
+
+.right-translate {
+  transform: translateX(60%);
+}
+
+section {
+  transition: all 1s ease;
+}
