@@ -629,6 +629,7 @@ footer .copyright-row span {
   }
   #home .home-carousel-container .home-carousel-item {
     width: 70% !important;
+    height: 96% !important;
     aspect-ratio: 4/3;
   }
   #home .home-carousel-container .home-carousel-item .home-carousel-body img {
