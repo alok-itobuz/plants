@@ -1348,3 +1348,8 @@ footer {
 section {
   transition: all 1s ease;
 }
+
+.sticky-nav {
+  position: sticky !important;
+  top: 0;
+}

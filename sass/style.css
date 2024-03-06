@@ -1047,4 +1047,9 @@ footer .copyright-row span {
 
 section {
   transition: all 1s ease;
+}
+
+.sticky-nav {
+  position: sticky !important;
+  top: 0;
 }/*# sourceMappingURL=style.css.map */
