@@ -1,18 +1,22 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @mixin setFontFamily($fontFamily) {
-  @if ($fontFamily == "poppins") {
+  @if ($fontFamily =="poppins") {
     font-family: "Poppins", sans-serif;
-  } @else {
+  }
+
+  @else {
     font-family: "Playfair Display", serif;
   }
 }
 
 @mixin absoluteAlignCenter($direction) {
-  @if ($direction == "top") {
+  @if ($direction =="top") {
     top: 50%;
     transform: translateY(-50%);
-  } @else {
+  }
+
+  @else {
     left: 50%;
     transform: translateX(-50%);
   }
@@ -23,6 +27,7 @@
   --dark-green-color: #4a4e1c;
   --light-green-color: #3e8646;
   --very-light-green-color: #92b896;
+  --yellowish-grey-color: #FCFBF8;
   --black-color: #09270d;
   --dark-grey-color: #7d807e;
   --grey-color: #727272;
@@ -30,6 +35,8 @@
   --white-color: #fff;
   --yellow-color: #f5c771;
   --deep-white-color: #faf9f7;
+  --footer-text-color: #B0BAA3;
+  --footer-icon-bg-color: #81AF75;
 }
 
 * {
@@ -145,6 +152,23 @@ body {
       max-width: 15rem;
       color: var(--green-color);
       @include setFontFamily("playfair");
+
+      position: relative;
+
+      &::after {
+        position: absolute;
+        content: '';
+        display: block;
+        width: 10rem;
+        height: 10rem;
+        border-radius: 50%;
+        top: -50%;
+        left: -10%;
+        z-index: -1;
+        opacity: .1;
+        background: var(--green-color);
+        filter: blur(20px);
+      }
     }
 
     .buttons-container {
@@ -302,9 +326,91 @@ body {
   }
 }
 
+#choosepath {
+  h2 {
+    @include setFontFamily('playfair');
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      top: -50%;
+      left: -10%;
+      z-index: -1;
+      opacity: .1;
+      background: var(--green-color);
+      filter: blur(20px);
+    }
+  }
+
+  .cards-container {
+    .card-wrapper {
+      aspect-ratio: 4/3;
+      max-width: 20rem;
+
+      .card {
+        box-shadow: 0 34px 50px -28px rgba($color: #021605, $alpha: 0.1);
+
+        &:hover {
+          cursor: pointer;
+          background: var(--green-color);
+
+          .image-container {
+            background: var(--white-color);
+
+            img {
+              filter: invert(44%) sepia(54%) saturate(474%) hue-rotate(77deg) brightness(90%) contrast(84%);
+            }
+          }
+
+          h3,
+          p {
+            color: var(--white-color);
+          }
+        }
+
+        .image-container {
+          aspect-ratio: 1/1;
+          background: var(--green-color);
+        }
+
+        h3 {
+          @include setFontFamily('playfair');
+          font-size: 1.3rem;
+        }
+
+        p {
+          font-size: .7rem;
+          color: var(--grey-color);
+        }
+      }
+    }
+  }
+}
+
 #clients {
   h2 {
     @include setFontFamily("playfair");
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 15rem;
+      height: 15rem;
+      border-radius: 50%;
+      top: -50%;
+      left: -10%;
+      z-index: -1;
+      opacity: .1;
+      background: var(--green-color);
+      filter: blur(10px);
+    }
   }
 
   .clients-carousel-container {
@@ -348,12 +454,15 @@ body {
         transition: all 0.2s ease;
         color: var(--black-color);
         background: var(--white-color);
+
         &.active {
           background: var(--green-color);
+
           p {
             color: var(--white-color);
           }
         }
+
         p {
           font-size: 0.9rem;
         }
@@ -361,7 +470,7 @@ body {
         .double-quotes {
           width: 1.5rem;
           height: 1.5rem;
-          filter: invert(100%);
+          filter: invert(44%) sepia(54%) saturate(474%) hue-rotate(77deg) brightness(90%) contrast(84%);
 
           &:last-child {
             bottom: 1rem;
@@ -401,9 +510,9 @@ body {
     background: radial-gradient(#146b20 20%, #104e18);
     border-radius: 50% 50% 0 0;
     left: 55%;
-    transform: translateX(-50%) rotateZ(27deg) rotateY(322deg)
-      perspective(1200px);
+    transform: translateX(-50%) rotateZ(27deg) rotateY(322deg) perspective(1200px);
     z-index: -1;
+
     img {
       height: 100%;
       width: 100%;
@@ -412,18 +521,22 @@ body {
       transform: rotateX(330deg) rotateY(7deg);
     }
   }
+
   .text-container {
     background: #fffd;
     height: 100%;
     width: 100%;
+
     h2 {
       @include setFontFamily("playfair");
     }
+
     p {
       @include setFontFamily("playfair");
       font-size: 0.7rem;
       max-width: 20rem;
     }
+
     button {
       width: fit-content;
       padding: 0.2rem 1rem;
@@ -431,9 +544,63 @@ body {
       border: 1px solid var(--black-color);
       background: transparent;
       font-size: 0.7rem;
+
       &:hover {
         background: var(--black-color);
         color: var(--white-color);
+      }
+    }
+  }
+}
+
+#advantage {
+  h2 {
+    @include setFontFamily('playfair');
+
+    position: relative;
+
+    &::after {
+      position: absolute;
+      content: '';
+      display: block;
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      top: -50%;
+      left: -10%;
+      z-index: -1;
+      opacity: .1;
+      background: var(--green-color);
+      filter: blur(7px);
+    }
+  }
+
+  .cards-container {
+
+    .card {
+      aspect-ratio: 5/2;
+      max-width: 20rem;
+
+      .image-container {
+        background: var(--green-color);
+        width: 18%;
+        aspect-ratio: 1/1;
+      }
+
+      .card-text {
+        width: 91%;
+        padding-left: 12%;
+        background: var(--yellowish-grey-color);
+        border-radius: .7rem;
+
+        h6 {
+          font-size: .7rem;
+        }
+
+        p {
+          font-size: .65rem;
+          color: var(--grey-color);
+        }
       }
     }
   }
@@ -471,6 +638,7 @@ body {
 
     textarea {
       position: relative;
+
       &::placeholder {
         position: absolute;
         bottom: 0;
@@ -496,6 +664,89 @@ body {
   }
 }
 
+#plantcare {
+  .text-container {
+    order: 1;
+
+    h2 {
+      @include setFontFamily('playfair');
+    }
+
+    p {
+      max-width: 30rem;
+      font-size: .8rem;
+      @include setFontFamily('playfair');
+      color: var(--grey-color);
+    }
+
+    button {
+      border: 1px solid var(--black-color);
+      background: transparent;
+      border-radius: 2rem;
+      font-size: .8rem;
+
+      &:hover {
+        color: var(--white-color);
+        cursor: pointer;
+        background: var(--black-color);
+      }
+    }
+  }
+}
+
+footer {
+  background: var(--black-color);
+
+  >.row:first-child {
+    border-bottom: 1px solid var(--footer-text-color)
+  }
+
+  .footer-text-container {
+    @include setFontFamily('poppins');
+
+    h1 {
+      color: #D0D6C9;
+    }
+
+    p {
+      color: var(--footer-text-color);
+      font-size: .7rem;
+    }
+
+    .icons-container {
+      height: 2rem;
+
+      a {
+        aspect-ratio: 1/1;
+        background: var(--footer-icon-bg-color);
+
+      }
+    }
+  }
+
+  .footer-links {
+    h3 {
+      color: #D0D6C9;
+      font-size: 1rem;
+    }
+
+    span {
+      color: var(--footer-text-color);
+      font-size: .55rem;
+    }
+  }
+
+  .copyright-row {
+    height: 5rem;
+
+    p,
+    span {
+      color: var(--footer-text-color);
+      font-size: .6rem;
+    }
+  }
+}
+
 @media (min-width: 768px) {
   #home {
     height: 70vh;
@@ -510,8 +761,6 @@ body {
         aspect-ratio: 4/3;
 
         .home-carousel-body {
-          // height: 95% !important;
-
           img {
             width: unset !important;
           }
@@ -583,10 +832,12 @@ body {
     }
   }
 
+
   #journey {
     height: 70vh;
     overflow: hidden;
-    > div {
+
+    >div {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -608,6 +859,7 @@ body {
         left: unset;
         transform: unset;
         z-index: unset;
+
         img {
           height: 130%;
           position: absolute;
@@ -615,16 +867,19 @@ body {
           transform: unset;
         }
       }
+
       .text-container {
         background: transparent;
         // height: 100%;
         width: 50%;
-        h2 {
-        }
+
+        h2 {}
+
         p {
           font-size: 0.8rem;
           max-width: unset;
         }
+
         button {
           padding: 0.3rem 1.2rem;
           border-radius: 5rem;
@@ -641,6 +896,30 @@ body {
     }
   }
 
+  #advantage {
+    position: relative;
+
+    &::after {
+      content: "";
+      height: 15rem;
+      width: 44rem;
+      background: url(../assets/static/advantage/advantage_leaves.svg);
+      position: absolute;
+      right: -46%;
+      top: -30%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
+    .cards-container .card .card-text {
+
+      h6,
+      p {
+        font-size: .85rem;
+      }
+    }
+  }
+
   #askus {
     height: 55vh;
 
@@ -648,12 +927,14 @@ body {
       width: 55% !important;
       border-radius: 1.2rem;
       overflow: hidden;
+
       img {
         height: 100% !important;
         width: 100% !important;
         object-fit: cover;
       }
     }
+
     form {
       border-radius: 1.2rem;
       max-width: unset;
@@ -668,6 +949,7 @@ body {
         font-size: 1.5rem;
         margin-bottom: 0.6rem;
       }
+
       input,
       textarea {
         font-size: 0.9rem;
@@ -687,14 +969,17 @@ body {
       width: 15rem;
       right: 1rem;
       bottom: -2rem;
-      > div {
+
+      >div {
         img {
           height: 3rem;
           transform-origin: center;
           filter: drop-shadow(-50px 30px 7px #02160511);
+
           &:first-child {
             top: 3rem;
           }
+
           &:nth-child(2) {
             right: 4rem;
             height: 3rem;
@@ -702,6 +987,7 @@ body {
             transform: rotate(195deg);
             filter: drop-shadow(0px -30px 7px #02160511);
           }
+
           &:last-child {
             right: 0;
             top: 0;
@@ -712,7 +998,39 @@ body {
     }
   }
 
+  #choosepath {
+    .cards-container {
+      .card-wrapper {
+        aspect-ratio: 7/6;
+
+        .card {
+          h3 {
+            font-size: 1.2rem;
+          }
+
+          p {
+            font-size: .6rem;
+          }
+        }
+      }
+    }
+  }
+
   #clients {
+    position: relative;
+
+    &::after {
+      position: absolute;
+      height: 7rem;
+      width: 18rem;
+      background: url(../assets/static/clients/client_leaves.svg);
+      content: '';
+      top: 0%;
+      right: -20%;
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
+
     .clients-carousel-container {
       height: 10rem;
 
@@ -772,15 +1090,56 @@ body {
         .client-carousel-button {
           min-width: 1.5rem;
           min-height: 1.5rem;
-          border: 1px solid black !important;
+          border: none;
+          box-shadow: 0 34px 50px -28px rgba($color: #021605, $alpha: 0.1);
           position: unset;
-          transition: all 0.2s easefff;
+          transition: all .3s ease;
 
           &.prev {
             transform: rotate(180deg);
           }
         }
       }
+    }
+  }
+
+  #plantcare {
+    .text-container {
+      order: unset;
+
+      button {
+        position: relative;
+
+        &::after {
+          content: '';
+          background: url(../assets/static/plantcare/plantcare_leaves.svg);
+          height: 5rem;
+          width: 5rem;
+          position: absolute;
+          background-repeat: no-repeat;
+          background-size: contain;
+          background-position: center;
+          right: -4rem;
+          bottom: -4rem;
+        }
+      }
+    }
+
+  }
+
+  footer {
+    .footer-links {
+      h3 {
+        font-size: 1.2rem;
+      }
+
+      span {
+        font-size: .7rem;
+      }
+    }
+
+    .copyright-row {
+      height: 3rem;
     }
   }
 }
@@ -813,10 +1172,7 @@ body {
     }
   }
 
-  #collection
-    .collection-carousel-container
-    .collection-carousel
-    .collection-carousel-item {
+  #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
     width: 33.33% !important;
   }
 
@@ -825,8 +1181,39 @@ body {
     overflow: hidden;
   }
 
+  #advantage .cards-container .card {
+    width: 32% !important;
+
+    .card-text {
+
+      h6,
+      p {
+        font-size: .75rem;
+      }
+    }
+  }
+
   #askus {
     height: 60vh;
+  }
+
+  #choosepath {
+    .cards-container {
+      .card-wrapper {
+        max-width: 25rem;
+        aspect-ratio: 7/6;
+
+        .card {
+          h3 {
+            font-size: 1.4rem;
+          }
+
+          p {
+            font-size: .8rem;
+          }
+        }
+      }
+    }
   }
 
   #clients {
@@ -863,12 +1250,15 @@ body {
   #journey {
     height: 90vh;
     overflow: hidden;
-    > div {
+
+    >div {
       .text-container {
         width: 50%;
+
         p {
           font-size: 1rem;
         }
+
         button {
           padding: 0.5rem 1.5rem;
           font-size: 0.9rem;
@@ -894,6 +1284,18 @@ body {
       }
     }
   }
+
+  #plantcare {
+    .text-container {
+      p {
+        font-size: 1rem;
+      }
+
+      button {
+        font-size: 1rem;
+      }
+    }
+  }
 }
 
 @media (min-width: 1400px) {
@@ -902,6 +1304,7 @@ body {
       width: 30% !important;
     }
   }
+
   #clients {
     .clients-carousel-container {
       height: 13rem;
@@ -913,6 +1316,7 @@ body {
 
         .client-description {
           padding: 0 3.5rem 0 5rem;
+
           p {
             font-size: 0.85rem;
           }
