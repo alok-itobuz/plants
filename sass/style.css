@@ -1,10 +1,15 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+html {
+  overflow-x: hidden;
+}
+
 :root {
+  overflow-x: hidden;
   --green-color: #3e8847;
   --dark-green-color: #4a4e1c;
   --light-green-color: #3e8646;
   --very-light-green-color: #92b896;
-  --yellowish-grey-color: #FCFBF8;
+  --yellowish-grey-color: #fcfbf8;
   --black-color: #09270d;
   --dark-grey-color: #7d807e;
   --grey-color: #727272;
@@ -12,8 +17,8 @@
   --white-color: #fff;
   --yellow-color: #f5c771;
   --deep-white-color: #faf9f7;
-  --footer-text-color: #B0BAA3;
-  --footer-icon-bg-color: #81AF75;
+  --footer-text-color: #b0baa3;
+  --footer-icon-bg-color: #81af75;
 }
 
 * {
@@ -32,6 +37,7 @@ button:hover {
 
 body {
   font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
 }
 
 .navbar a.navbar-brand {
@@ -582,7 +588,7 @@ footer .footer-text-container {
   font-family: "Poppins", sans-serif;
 }
 footer .footer-text-container h1 {
-  color: #D0D6C9;
+  color: #d0d6c9;
 }
 footer .footer-text-container p {
   color: var(--footer-text-color);
@@ -596,7 +602,7 @@ footer .footer-text-container .icons-container a {
   background: var(--footer-icon-bg-color);
 }
 footer .footer-links h3 {
-  color: #D0D6C9;
+  color: #d0d6c9;
   font-size: 1rem;
 }
 footer .footer-links span {
@@ -623,6 +629,7 @@ footer .copyright-row span {
   }
   #home .home-carousel-container .home-carousel-item {
     width: 70% !important;
+    height: 96% !important;
     aspect-ratio: 4/3;
   }
   #home .home-carousel-container .home-carousel-item .home-carousel-body img {
@@ -732,12 +739,12 @@ footer .copyright-row span {
   }
   #advantage::after {
     content: "";
-    height: 15rem;
-    width: 44rem;
+    height: 12rem;
+    width: 20rem;
     background: url(../assets/static/advantage/advantage_leaves.svg);
     position: absolute;
-    right: -46%;
-    top: -30%;
+    right: 0%;
+    top: -41%;
     background-size: contain;
     background-repeat: no-repeat;
   }

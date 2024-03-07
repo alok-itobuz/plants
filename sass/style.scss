@@ -1,33 +1,33 @@
 @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 
 @mixin setFontFamily($fontFamily) {
-  @if ($fontFamily =="poppins") {
+  @if ($fontFamily == "poppins") {
     font-family: "Poppins", sans-serif;
-  }
-
-  @else {
+  } @else {
     font-family: "Playfair Display", serif;
   }
 }
 
 @mixin absoluteAlignCenter($direction) {
-  @if ($direction =="top") {
+  @if ($direction == "top") {
     top: 50%;
     transform: translateY(-50%);
-  }
-
-  @else {
+  } @else {
     left: 50%;
     transform: translateX(-50%);
   }
 }
+html {
+  overflow-x: hidden;
+}
 
 :root {
+  overflow-x: hidden;
   --green-color: #3e8847;
   --dark-green-color: #4a4e1c;
   --light-green-color: #3e8646;
   --very-light-green-color: #92b896;
-  --yellowish-grey-color: #FCFBF8;
+  --yellowish-grey-color: #fcfbf8;
   --black-color: #09270d;
   --dark-grey-color: #7d807e;
   --grey-color: #727272;
@@ -35,8 +35,8 @@
   --white-color: #fff;
   --yellow-color: #f5c771;
   --deep-white-color: #faf9f7;
-  --footer-text-color: #B0BAA3;
-  --footer-icon-bg-color: #81AF75;
+  --footer-text-color: #b0baa3;
+  --footer-icon-bg-color: #81af75;
 }
 
 * {
@@ -45,7 +45,7 @@
   box-sizing: border-box;
   color: var(--black-color);
   font-family: inherit;
-  transition: all .3s ease;
+  transition: all 0.3s ease;
 }
 
 a:hover,
@@ -55,6 +55,7 @@ button:hover {
 
 body {
   @include setFontFamily("poppins");
+  overflow-x: hidden;
 }
 
 .navbar {
@@ -167,7 +168,7 @@ body {
 
       &::after {
         position: absolute;
-        content: '';
+        content: "";
         display: block;
         width: 10rem;
         height: 10rem;
@@ -175,7 +176,7 @@ body {
         top: -50%;
         left: -10%;
         z-index: -1;
-        opacity: .1;
+        opacity: 0.1;
         background: var(--green-color);
         filter: blur(20px);
       }
@@ -338,12 +339,12 @@ body {
 
 #choosepath {
   h2 {
-    @include setFontFamily('playfair');
+    @include setFontFamily("playfair");
     position: relative;
 
     &::after {
       position: absolute;
-      content: '';
+      content: "";
       display: block;
       width: 15rem;
       height: 15rem;
@@ -351,7 +352,7 @@ body {
       top: -50%;
       left: -10%;
       z-index: -1;
-      opacity: .1;
+      opacity: 0.1;
       background: var(--green-color);
       filter: blur(20px);
     }
@@ -373,7 +374,8 @@ body {
             background: var(--white-color);
 
             img {
-              filter: invert(44%) sepia(54%) saturate(474%) hue-rotate(77deg) brightness(90%) contrast(84%);
+              filter: invert(44%) sepia(54%) saturate(474%) hue-rotate(77deg)
+                brightness(90%) contrast(84%);
             }
           }
 
@@ -389,12 +391,12 @@ body {
         }
 
         h3 {
-          @include setFontFamily('playfair');
+          @include setFontFamily("playfair");
           font-size: 1.3rem;
         }
 
         p {
-          font-size: .7rem;
+          font-size: 0.7rem;
           color: var(--grey-color);
         }
       }
@@ -409,7 +411,7 @@ body {
 
     &::after {
       position: absolute;
-      content: '';
+      content: "";
       display: block;
       width: 15rem;
       height: 15rem;
@@ -417,7 +419,7 @@ body {
       top: -50%;
       left: -10%;
       z-index: -1;
-      opacity: .1;
+      opacity: 0.1;
       background: var(--green-color);
       filter: blur(10px);
     }
@@ -480,7 +482,8 @@ body {
         .double-quotes {
           width: 1.5rem;
           height: 1.5rem;
-          filter: invert(44%) sepia(54%) saturate(474%) hue-rotate(77deg) brightness(90%) contrast(84%);
+          filter: invert(44%) sepia(54%) saturate(474%) hue-rotate(77deg)
+            brightness(90%) contrast(84%);
 
           &:last-child {
             bottom: 1rem;
@@ -520,7 +523,8 @@ body {
     background: radial-gradient(#146b20 20%, #104e18);
     border-radius: 50% 50% 0 0;
     left: 55%;
-    transform: translateX(-50%) rotateZ(27deg) rotateY(322deg) perspective(1200px);
+    transform: translateX(-50%) rotateZ(27deg) rotateY(322deg)
+      perspective(1200px);
     z-index: -1;
 
     img {
@@ -565,13 +569,13 @@ body {
 
 #advantage {
   h2 {
-    @include setFontFamily('playfair');
+    @include setFontFamily("playfair");
 
     position: relative;
 
     &::after {
       position: absolute;
-      content: '';
+      content: "";
       display: block;
       width: 10rem;
       height: 10rem;
@@ -579,14 +583,13 @@ body {
       top: -50%;
       left: -10%;
       z-index: -1;
-      opacity: .1;
+      opacity: 0.1;
       background: var(--green-color);
       filter: blur(7px);
     }
   }
 
   .cards-container {
-
     .card {
       aspect-ratio: 5/2;
       max-width: 20rem;
@@ -602,14 +605,14 @@ body {
         width: 91%;
         padding-left: 12%;
         background: var(--yellowish-grey-color);
-        border-radius: .7rem;
+        border-radius: 0.7rem;
 
         h6 {
-          font-size: .7rem;
+          font-size: 0.7rem;
         }
 
         p {
-          font-size: .65rem;
+          font-size: 0.65rem;
           color: var(--grey-color);
         }
       }
@@ -680,13 +683,13 @@ body {
     order: 1;
 
     h2 {
-      @include setFontFamily('playfair');
+      @include setFontFamily("playfair");
     }
 
     p {
       max-width: 30rem;
-      font-size: .8rem;
-      @include setFontFamily('playfair');
+      font-size: 0.8rem;
+      @include setFontFamily("playfair");
       color: var(--grey-color);
     }
 
@@ -694,7 +697,7 @@ body {
       border: 1px solid var(--black-color);
       background: transparent;
       border-radius: 2rem;
-      font-size: .8rem;
+      font-size: 0.8rem;
 
       &:hover {
         color: var(--white-color);
@@ -708,20 +711,20 @@ body {
 footer {
   background: var(--black-color);
 
-  >.row:first-child {
-    border-bottom: 1px solid var(--footer-text-color)
+  > .row:first-child {
+    border-bottom: 1px solid var(--footer-text-color);
   }
 
   .footer-text-container {
-    @include setFontFamily('poppins');
+    @include setFontFamily("poppins");
 
     h1 {
-      color: #D0D6C9;
+      color: #d0d6c9;
     }
 
     p {
       color: var(--footer-text-color);
-      font-size: .7rem;
+      font-size: 0.7rem;
     }
 
     .icons-container {
@@ -730,20 +733,19 @@ footer {
       a {
         aspect-ratio: 1/1;
         background: var(--footer-icon-bg-color);
-
       }
     }
   }
 
   .footer-links {
     h3 {
-      color: #D0D6C9;
+      color: #d0d6c9;
       font-size: 1rem;
     }
 
     span {
       color: var(--footer-text-color);
-      font-size: .55rem;
+      font-size: 0.55rem;
     }
   }
 
@@ -753,7 +755,7 @@ footer {
     p,
     span {
       color: var(--footer-text-color);
-      font-size: .6rem;
+      font-size: 0.6rem;
     }
   }
 }
@@ -769,6 +771,7 @@ footer {
 
       .home-carousel-item {
         width: 70% !important;
+        height: 96% !important;
         aspect-ratio: 4/3;
 
         .home-carousel-body {
@@ -843,12 +846,11 @@ footer {
     }
   }
 
-
   #journey {
     height: 70vh;
     overflow: hidden;
 
-    >div {
+    > div {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -884,7 +886,8 @@ footer {
         // height: 100%;
         width: 50%;
 
-        h2 {}
+        h2 {
+        }
 
         p {
           font-size: 0.8rem;
@@ -912,21 +915,20 @@ footer {
 
     &::after {
       content: "";
-      height: 15rem;
-      width: 44rem;
+      height: 12rem;
+      width: 20rem;
       background: url(../assets/static/advantage/advantage_leaves.svg);
       position: absolute;
-      right: -46%;
-      top: -30%;
+      right: -0%;
+      top: -41%;
       background-size: contain;
       background-repeat: no-repeat;
     }
 
     .cards-container .card .card-text {
-
       h6,
       p {
-        font-size: .85rem;
+        font-size: 0.85rem;
       }
     }
   }
@@ -981,7 +983,7 @@ footer {
       right: 1rem;
       bottom: -2rem;
 
-      >div {
+      > div {
         img {
           height: 3rem;
           transform-origin: center;
@@ -1020,7 +1022,7 @@ footer {
           }
 
           p {
-            font-size: .6rem;
+            font-size: 0.6rem;
           }
         }
       }
@@ -1035,7 +1037,7 @@ footer {
       height: 7rem;
       width: 18rem;
       background: url(../assets/static/clients/client_leaves.svg);
-      content: '';
+      content: "";
       top: 0%;
       right: -20%;
       background-size: contain;
@@ -1104,7 +1106,7 @@ footer {
           border: none;
           box-shadow: 0 34px 50px -28px rgba($color: #021605, $alpha: 0.1);
           position: unset;
-          transition: all .3s ease;
+          transition: all 0.3s ease;
 
           &.prev {
             transform: rotate(180deg);
@@ -1122,7 +1124,7 @@ footer {
         position: relative;
 
         &::after {
-          content: '';
+          content: "";
           background: url(../assets/static/plantcare/plantcare_leaves.svg);
           height: 5rem;
           width: 5rem;
@@ -1135,7 +1137,6 @@ footer {
         }
       }
     }
-
   }
 
   footer {
@@ -1145,7 +1146,7 @@ footer {
       }
 
       span {
-        font-size: .7rem;
+        font-size: 0.7rem;
       }
     }
 
@@ -1183,7 +1184,10 @@ footer {
     }
   }
 
-  #collection .collection-carousel-container .collection-carousel .collection-carousel-item {
+  #collection
+    .collection-carousel-container
+    .collection-carousel
+    .collection-carousel-item {
     width: 33.33% !important;
   }
 
@@ -1196,10 +1200,9 @@ footer {
     width: 32% !important;
 
     .card-text {
-
       h6,
       p {
-        font-size: .75rem;
+        font-size: 0.75rem;
       }
     }
   }
@@ -1220,7 +1223,7 @@ footer {
           }
 
           p {
-            font-size: .8rem;
+            font-size: 0.8rem;
           }
         }
       }
@@ -1262,7 +1265,7 @@ footer {
     height: 90vh;
     overflow: hidden;
 
-    >div {
+    > div {
       .text-container {
         width: 50%;
 
