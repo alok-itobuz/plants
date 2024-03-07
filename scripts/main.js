@@ -24,7 +24,7 @@ const sectionObserver = new IntersectionObserver(removeSectionTranslation, {
   rootMargin: `-${
     document.querySelector("nav").getBoundingClientRect().height
   }px`,
-  threshold: 0.25,
+  threshold: 0.1,
 });
 allSections.forEach((section) => sectionObserver.observe(section));
 
