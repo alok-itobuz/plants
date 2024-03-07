@@ -1,11 +1,11 @@
 //scroll animation
 const allSections = document.querySelectorAll("section");
 allSections.forEach((section, i) => {
-  i % 2 == 0
+  i % 2 === 0
     ? section.classList.add("left-translate")
     : section.classList.add("right-translate");
 
-  i % 2 == 0
+  i % 2 === 0
     ? (section.dataset.classTranslate = "left-translate")
     : (section.dataset.classTranslate = "right-translate");
 });
@@ -18,6 +18,7 @@ const removeSectionTranslation = (entries, observer) => {
     }
   });
 };
+
 const sectionObserver = new IntersectionObserver(removeSectionTranslation, {
   root: null,
   rootMargin: `-${
@@ -49,7 +50,7 @@ const collectionCarouselButtonsContainer = document.querySelector(
 const createCarouselCard = (i) => {
   return `
     <div class="home-carousel-item w-100 h-100 position-absolute ${
-      i == 0 ? "active" : ""
+      i === 0 ? "active" : ""
     }" data-id=${i}>
         <div class="home-carousel-body position-relative h-100 w-100 overflow-hidden ">
             <img class="" src="./assets/static/home/plant_${i}.png" alt="home plant">
@@ -57,12 +58,14 @@ const createCarouselCard = (i) => {
         </div>
     </div>`;
 };
+
 function createSliderSpan(i) {
   return `<span class="home-carousel-slider-span h-100  border-0 ${
-    i == 0 ? "active" : ""
+    i === 0 ? "active" : ""
   }" data-id=${i}>
     </span>`;
 }
+
 function createCollectionCarouselCard(i) {
   return `
     <div class="collection-carousel-item h-100 w-100 position-absolute p-1 p-md-2 p-lg-3 " data-id=${i}>
@@ -81,6 +84,7 @@ function createCollectionCarouselCard(i) {
     </div>
     `;
 }
+
 function createClientButtonWrapper() {
   return `
     <div class="clients-button-wrapper d-none d-md-flex flex-column align-items-center justify-content-center">
@@ -91,6 +95,7 @@ function createClientButtonWrapper() {
     </div>
   `;
 }
+
 function createClientCard(i) {
   return `
     <div
@@ -331,6 +336,7 @@ clientCarouselContainer.addEventListener("click", (e) => {
     }
   });
 });
+
 // IIFE
 (function () {
   displayCarouselItem(
