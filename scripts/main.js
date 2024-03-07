@@ -10,7 +10,6 @@ allSections.forEach((section, i) => {
     : (section.dataset.classTranslate = "right-translate");
 });
 
-// console.log(document.querySelector("nav").getBoundingClientRect().height);
 const removeSectionTranslation = (entries, observer) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
